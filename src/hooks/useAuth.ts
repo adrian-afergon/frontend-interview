@@ -1,8 +1,4 @@
-import React from "react";
+import {useContext} from "react";
+import { AuthContext } from "../context/AuthContext";
 
-export const useAuth = () => {
-
-  const [token, setToken] = React.useState<string|null>(null)
-
-  return {token}
-}
+export const useAuth = () => useContext(AuthContext)
