@@ -9,6 +9,7 @@ export const Dashboard: React.FC = () =>  {
     <NavTab>
       <LinkTab label="View" to="view" />
       <LinkTab label="Create" to="create" />
+      <LinkTab label="Status" to="status" />
     </NavTab>
     <>
       <Typography>Dashboard</Typography>

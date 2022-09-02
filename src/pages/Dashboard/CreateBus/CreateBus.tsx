@@ -1,7 +1,11 @@
 import {TextField, Typography} from "@mui/material";
 import React from "react";
+import {useDataMutation} from "../../../hooks/useDataMutation";
+import {createBus} from "../../../api/buses.http";
 
 export const CreateBus: React.FC = () => {
+
+  useDataMutation({key: 'bus', mutation: createBus})
 
   return <>
     <Typography>Create Bust</Typography>
@@ -9,12 +13,7 @@ export const CreateBus: React.FC = () => {
     <form>
       <TextField
         type="text"
-        label="Name"
-        variant="outlined"
-      />
-      <TextField
-        type="text"
-        label="Flag"
+        label="Brand"
         variant="outlined"
       />
       <TextField
@@ -31,7 +30,7 @@ export const CreateBus: React.FC = () => {
         type="text"
         label="length"
         variant="outlined"
-        />
+      />
 
     </form>
 

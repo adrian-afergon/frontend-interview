@@ -1,0 +1,27 @@
+{
+  "buses": [
+    {
+      "brand": "IL-MERK",
+      "registrationNumber": "IL3457B",
+      "maxPassengers": "120",
+      "length":"2"
+    },
+    {
+      "brand": "ES-PEGS",
+      "registrationNumber": "EU3923LPR",
+      "maxPassengers": "90",
+      "length":"2"
+    }
+  ],
+  "brands": [
+    {"code":  "IL-MERK", "value":  "Merkavim"},
+    {"code":  "IL-HAAR", "value":  "Ha'argaz"},
+    {"code":  "ES-PEGS", "value":  "Pegaso"},
+    {"code":  "ES-SEID", "value":  "Seida"}
+  ],
+  "status": {
+    "buses": "UP",
+    "brand": "UP",
+    "lines": "DOWN"
+  }
+}
