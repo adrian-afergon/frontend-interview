@@ -1,5 +1,5 @@
 import React, {ReactNode} from "react";
-import {AppHeader} from "../AppHeader/AppHeader";
+import {AppHeader} from "../AppHeader";
 import {AppDrawer} from "../AppDrawer";
 
 type Props = {
