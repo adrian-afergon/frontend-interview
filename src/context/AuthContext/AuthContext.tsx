@@ -1,59 +1,28 @@
 import React, {ReactNode} from "react";
 import {config} from "../../config";
+import {AuthActionTypes, reducer} from "./auth.reducer";
+import {initialState} from "./auth.state";
 
 type LoginParams = {
   username: string
   password: string
 }
 
-type AuthContextProps = {
+type AuthContextValue = {
   username: string|null
   login: (params: LoginParams) => void
   logout: () => void
 }
 
-export const AuthContext  = React.createContext<AuthContextProps>({
+export const AuthContext  = React.createContext<AuthContextValue>({
   username: null,
   login: () => undefined,
   logout: () => undefined
 })
 
-enum AuthActionTypes {
-  LOGIN = 'LOGIN',
-  LOGOUT = 'LOGOUT'
-}
-
 type Props = {
   children: ReactNode
 }
-
-type AuthState = {
-  username: string|null
-}
-
-type AuthLoginAction = {
-  type: AuthActionTypes.LOGIN
-  payload: {username: string|null}
-}
-
-type AuthLogoutAction = {
-  type: AuthActionTypes.LOGOUT
-}
-
-type AuthAction = AuthLoginAction | AuthLogoutAction
-
-const initialState: AuthState = { username: null}
-
-const reducer = (state: AuthState, action: AuthAction) => {
-  switch (action.type) {
-    case AuthActionTypes.LOGIN:
-      return {...state, username: action.payload.username};
-    case AuthActionTypes.LOGOUT:
-      return {...state, username: null};
-    default:
-      throw new Error();
-  }
-};
 
 export const AuthProvider: React.FC<Props> = ({children}) => {
 
@@ -69,12 +38,14 @@ export const AuthProvider: React.FC<Props> = ({children}) => {
     dispatch({type: AuthActionTypes.LOGOUT})
   }
 
+  const contextValue:AuthContextValue = {
+    login,
+    logout,
+    username: state.username,
+  }
+
   return (
-    <AuthContext.Provider value={{
-      login,
-      logout,
-      username: state.username,
-    }}>
+    <AuthContext.Provider value={contextValue}>
       {children}
     </AuthContext.Provider>
   )

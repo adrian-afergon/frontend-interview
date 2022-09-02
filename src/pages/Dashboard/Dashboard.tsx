@@ -2,10 +2,10 @@ import React from "react";
 import {Outlet} from "react-router-dom";
 import {LinkTab} from "../../components/LinkTab";
 import {NavTab} from "../../components/NavTab";
-import {Typography} from "@mui/material";
+import {Box, Typography} from "@mui/material";
 
 export const Dashboard: React.FC = () =>  {
-  return <section>
+  return <Box>
     <NavTab>
       <LinkTab label="View" to="view" />
       <LinkTab label="Create" to="create" />
@@ -16,5 +16,5 @@ export const Dashboard: React.FC = () =>  {
     </>
     <Outlet />
 
-  </section>
+  </Box>
 }

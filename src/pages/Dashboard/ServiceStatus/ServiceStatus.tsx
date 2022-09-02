@@ -3,10 +3,11 @@ import {Chip} from "@mui/material";
 import {ServiceStatusTypes, Status} from "../../../models/Status";
 import {useData} from "../../../hooks/useData";
 import {getStatus} from "../../../api/status.http";
+import {Loader} from "../../../components/Loader";
 
 export const ServiceStatus: React.FC = () => {
 
-  const {data: status} = useData<Status>({key: 'status', fetcher: getStatus})
+  const {data: status, isLoading} = useData<Status>({key: 'status', fetcher: getStatus})
 
   const statusColors = {
     [ServiceStatusTypes.UP]: 'success',
@@ -17,6 +18,7 @@ export const ServiceStatus: React.FC = () => {
 
   return (
     <>
+      {isLoading && <Loader/>}
       {status && Object.entries(status).map(([service, status]) => <Chip label={service} color={statusColors[status]}/>)}
     </>
   );

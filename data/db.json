@@ -14,10 +14,10 @@
     }
   ],
   "brands": [
-    {"code":  "IL-MERK", "value":  "Merkavim"},
-    {"code":  "IL-HAAR", "value":  "Ha'argaz"},
-    {"code":  "ES-PEGS", "value":  "Pegaso"},
-    {"code":  "ES-SEID", "value":  "Seida"}
+    {"code":  "IL-MERK", "value":  "Israel Merkavim"},
+    {"code":  "IL-HAAR", "value":  "Israel Ha'argaz"},
+    {"code":  "ES-PEGS", "value":  "Spain Pegaso"},
+    {"code":  "ES-SEID", "value":  "Spain Seida"}
   ],
   "status": {
     "buses": "UP",
