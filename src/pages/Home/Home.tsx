@@ -1,8 +1,8 @@
 import React from "react";
-import {Typography} from "@mui/material";
+import {Box, Typography} from "@mui/material";
 
 export const Home: React.FC = () =>  {
-  return <section>
+  return <Box>
     <Typography>Home</Typography>
-  </section>
+  </Box>
 }

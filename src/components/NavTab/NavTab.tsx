@@ -13,7 +13,7 @@ export const NavTab: React.FC<Props> = ({children}) => {
   };
 
   return (
-    <Tabs value={value} onChange={handleChange}>
+    <Tabs value={value} onChange={handleChange} variant="fullWidth">
       {children}
     </Tabs>)
 }

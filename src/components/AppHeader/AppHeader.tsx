@@ -16,7 +16,10 @@ export const AppHeader: React.FC<Props> = ({title, navItems, onMenuIconClick}) =
                   onClick={onMenuIconClick}>
         <Menu/>
       </IconButton>
-      <Typography variant="h6" color="inherit" component="div">
+      <Typography variant="h6"
+                  component="div"
+                  sx={{ flexGrow: 1, display: { xs: 'block', sm: 'block' } }}
+      >
         {title}
       </Typography>
       <Box sx={{display: {xs: 'none', sm: 'block'}}}>
@@ -26,6 +29,7 @@ export const AppHeader: React.FC<Props> = ({title, navItems, onMenuIconClick}) =
           </Button>
         ))}
       </Box>
+      <Button>Login</Button>
     </Toolbar>
   </AppBar>
 )

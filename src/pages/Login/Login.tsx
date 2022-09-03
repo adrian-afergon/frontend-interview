@@ -1,5 +1,5 @@
 import React, {ChangeEvent, FormEvent} from "react";
-import {Button, TextField, Typography} from "@mui/material";
+import {Box, Button, TextField, Typography} from "@mui/material";
 import {useAuth} from "../../hooks/useAuth";
 import {useNavigate, useSearchParams} from "react-router-dom";
 
@@ -15,7 +15,7 @@ export const Login: React.FC = () => {
     event.preventDefault()
     login({username, password})
     const redirection = searchParams.get('redirect')
-    navigate(redirection || '/', { replace: true })
+    navigate(redirection || '/', {replace: true})
   }
 
   const disabled = !username || !password;
@@ -29,14 +29,23 @@ export const Login: React.FC = () => {
   }
 
   return (
-    <>
+    <Box sx={{
+      marginTop: 8,
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    }}>
       <Typography>Login</Typography>
-      <form onSubmit={handleSubmit}>
+      <Box component="form" onSubmit={handleSubmit} sx={{mt: 1}}>
         <TextField
           label="Username/Email"
           type="text"
           value={username}
           onChange={handleUsername}
+          margin="normal"
+          fullWidth
+          required
+          autoFocus
         />
 
         <TextField
@@ -44,12 +53,28 @@ export const Login: React.FC = () => {
           type="password"
           value={password}
           onChange={handlePassword}
+          margin="normal"
+          fullWidth
+          required
         />
 
-        <Button type="submit" variant="contained" disabled={disabled}>Login</Button>
-        <Button variant="outlined" href="/">Cancel</Button>
-      </form>
-    </>
+        <Button
+          type="submit"
+          variant="contained"
+          disabled={disabled}
+          fullWidth
+        >
+          Login
+        </Button>
+        <Button
+          variant="outlined"
+          href="/"
+          fullWidth
+        >
+          Cancel
+        </Button>
+      </Box>
+    </Box>
 
   )
 

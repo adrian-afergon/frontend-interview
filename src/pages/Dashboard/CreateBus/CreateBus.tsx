@@ -15,24 +15,37 @@ export const CreateBus: React.FC = () => {
         type="text"
         label="Brand"
         variant="outlined"
+        margin="normal"
+        fullWidth
+        required
+        autoFocus
       />
       <TextField
         type="number"
         label="Registration Number"
         variant="outlined"
+        margin="normal"
+        fullWidth
+        required
       />
       <TextField
         type="number"
         label="Max. Passengers"
         variant="outlined"
+        margin="normal"
+        fullWidth
+        required
       />
       <TextField
         type="text"
         label="length"
         variant="outlined"
+        margin="normal"
+        fullWidth
+        required
       />
 
-      <Button>Create Bus</Button>
+      <Button variant="contained">Create Bus</Button>
     </form>
 
   </>
